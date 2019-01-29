@@ -21,7 +21,7 @@ the linear equation derived above for Equation 8 (in the least squares sense).
 
 ![2d](/results/brief.png)
 
-**RANSAC**
+**RANSAC**    
 The least squares method you implemented for computing homographies is not robust to outliers. If all the correspondences are good matches, this is not a problem. But even a single false correspondence can completely throw off the homography estimation. When correspondences are determined automatically (using BRIEF feature matching for instance), some mismatches in a set of point correspondences are almost certain. RANSAC (Random Sample Consensus can be used to fit models robustly in the presence of outliers.
 Below funciton uses RANSAC to compute homographies automatically between two images:    
 ```bestH = ransacH(matches, locs1, locs2, nIter, tol)```
