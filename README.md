@@ -29,7 +29,7 @@ We apply ransacH() to these correspondences to compute H2to1, which is the homog
 
 Since the warped image will be translated to the right, we will need a larger target image.
 
-![1](/results/6_1.png)
+![1](/results/6_1.jpg)
 
 The output is clipped at the edges. We will fix this with the function:
 
@@ -47,7 +47,7 @@ images are not squeezed or elongated in the panorama image. We take as input the
 Hint: The computation will be done in terms of H2to1 and the extreme points
 (corners) of the two images. Make sure M includes only scale (find the aspect ratio of the full-sized panorama image) and translation.
 
-![2](/results/6_2.png)
+![2](/results/6_2.jpg)
 
 We implement a function that accepts two images as input, computes keypoints and descriptors for both the images, finds putative feature correspondences by matching BRIEF keypoint descriptors, estimates a homography using RANSAC and then warps one of the images with the homography so that they are aligned and then overlays them.
 
@@ -56,7 +56,7 @@ im3 = generatePanorama(im1, im2)
 We run our code on the image pair data/incline L.jpg, data/incline R.jpg.
 
 Final panorama view. With homography estimated using RANSAC.
-![3](/results/6_3.png)
+![3](/results/6_3.jpg)
 
 
 **Augmented Reality**
