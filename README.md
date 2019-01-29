@@ -4,21 +4,22 @@ We implement a function ```locs, desc = briefLite(im)``` to extract the descript
 • Get keypoint locations.
 • Compute a set of valid BRIEF descriptors.
 
-For BRIEF, the distance metric for matching is the Hamming distance.    
-```matches = briefMatch(desc1, desc2, ratio)``` accepts an m1 × n bits stack of BRIEF descriptors from a first image and a
+For BRIEF, the distance metric for matching is the Hamming distance.      
+```matches = briefMatch(desc1, desc2, ratio)```    
+accepts an m1 × n bits stack of BRIEF descriptors from a first image and a
 m2×n bits stack of BRIEF descriptors from a second image and returns a p×2 matrix of
 matches, where the first column are indices into desc1 and the second column are indices
 into desc2. 
 
-Figure 4: Example of BRIEF matches for model chickenbroth.jpg and
-chickenbroth 01.jpg.
 
 We implement the  Planar Homographies function
 ```H2to1 = computeH(X1,X2)```
 Inputs: X1 and X2 should be 2 × N matrices of corresponding (x; y)T coordinates between
 two images.
 Outputs: H2to1 should be a 3 × 3 matrix encoding the homography that best matches
-the linear equation derived above for Equation 8 (in the least squares sense). Hint:
+the linear equation derived above for Equation 8 (in the least squares sense).
+
+![2d](/results/brief.png)
 
 **RANSAC**
 The least squares method you implemented for computing homographies is not robust to outliers. If all the correspondences are good matches, this is not a problem. But even a single false correspondence can completely throw off the homography estimation. When correspondences are determined automatically (using BRIEF feature matching for instance), some mismatches in a set of point correspondences are almost certain. RANSAC (Random Sample Consensus can be used to fit models robustly in the presence of outliers.
