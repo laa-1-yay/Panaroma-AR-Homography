@@ -86,14 +86,13 @@ Homographies are also really useful for Augmented Reality (AR) applications.
 We use the following image of the book with the following data points:-
 W = 2 40 0 0: : :0 18 0 0 0 0: ::0 26 0 0 2 18:: :0 0 2 0 0 26: ::0 003 5
 are the 3D planar points of the textbook (in cm);
-X = 483 1704 2175 67 810 781 2217 2286
-are the corresponding projected points; and
-K = 2 43043 0 0: :0 3043 0 0 :72 0: :0 1196 0 1 :72 1604:0: :00 003 5
+X = 483 1704 2175 67 810 781 2217 2286   
+are the corresponding projected points; and   
+K = 2 43043 0 0: :0 3043 0 0 :72 0: :0 1196 0 1 :72 1604:0: :00 003 5   
 Given we have camera intrinsic parameters (K).
 
 The relationship between 3D planar and 2D projected point can be defined through,
-λnx~n = K[R;t]w~ n 
-
+λnx~n = K[R;t]w ~ n  
 where xn and wn relate to the n-th column vector of X and W.
 
 We have the function R,t = compute extrinsics(K, H) where K contains the intrinsic parameters and H contains the estimated homography.
@@ -109,6 +108,5 @@ of the book title. Use matplotlib’s plot function to display the points of the
 yellow. For this question disregard self occlusion (i.e. points on the projected sphere
 occluding other points). Capture the image and include it in your written response.
 
-Result:
-
+Result:   
 ![5](/results/pb2.png)
